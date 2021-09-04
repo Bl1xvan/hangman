@@ -1,1 +1,3 @@
 # hangman
+
+Typical hangman game
