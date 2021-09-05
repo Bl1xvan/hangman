@@ -12,10 +12,6 @@
   text-align: center;
 }
 
-.item {
-  background-color: #ff00ff;
-}
-
 .item.header, .item.rightletters, .item.alphabet, .item.wrongletters {
   text-align: center;
   font-variant: small-caps;
@@ -38,11 +34,6 @@
 .item.rightletters span {
   display: block;
   padding: 20px;
-}
-
-.minitem {
-  background-color: #ffff00;
-  border: 1px solid black;
 }
 
 .minitem.head img {
