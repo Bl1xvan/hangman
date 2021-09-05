@@ -1,0 +1,130 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+#main-container{
+    width: 70%;
+    background-color: aqua;
+    margin: auto;
+}
+
+#blankword-container, #wrong-letters{
+    text-align: center;
+}
+
+#hangman-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.item{
+    background-color: #ff00ff;
+
+    &.header{
+        grid-column: 1/ span 1;
+    }
+
+    &.wrongletters{
+        grid-column: 2;
+        grid-row: 1/ span 2;
+
+        span{
+            background-color: pink;
+            display: block;
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+            padding: 20px;
+            height: 90%;
+            border-radius: 10px;
+        }
+
+    }
+
+    &.rightletters, &.alphabet{
+        grid-column: 1/ span 2;
+    }
+ 
+
+    &.header, &.rightletters, &.alphabet, &.wrongletters{
+        text-align: center;
+        font-variant: small-caps;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    &.header{
+        font-size: 3rem;
+
+    }
+
+    &.alphabet{
+        span{
+            color: white;
+            background-color: #00aafd;
+            display: block;
+            width: 90%;
+            margin: auto;
+            font-size: 2rem;
+            padding: 10px;
+            }
+        }
+
+    &.rightletters{
+        span{
+            display: block;
+            font-size: 2rem;
+            padding: 20px;
+            }
+        }
+    
+
+}
+
+.createspace{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 60%;
+    margin: auto;
+}
+
+img{
+    width: 100%;;
+    height: auto;
+}
+
+.minitem{
+    background-color: #ffff00;
+    border: 1px solid black;
+
+    &.head{
+        img{
+            display: block;
+            margin: auto;
+        }
+    }
+
+    &.chest{
+        img{
+            display: block;
+            margin: auto;
+        }
+    }
+
+    &.rightarm{
+        img{
+            float: right;
+        }
+    }
+
+    &.rightleg{
+        img{
+            float: right;
+        }
+    }
+}
+
+
