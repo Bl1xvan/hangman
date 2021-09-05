@@ -1,0 +1,18 @@
+.minitem.head img {
+  display: block;
+  margin: auto;
+}
+
+.minitem.chest img {
+  display: block;
+  margin: auto;
+}
+
+.minitem.rightarm img {
+  float: right;
+}
+
+.minitem.rightleg img {
+  float: right;
+}
+/*# sourceMappingURL=minitems.css.map */

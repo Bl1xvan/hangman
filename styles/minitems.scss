@@ -1,0 +1,28 @@
+.minitem{
+
+    &.head{
+        img{
+            display: block;
+            margin: auto;
+        }
+    }
+
+    &.chest{
+        img{
+            display: block;
+            margin: auto;
+        }
+    }
+
+    &.rightarm{
+        img{
+            float: right;
+        }
+    }
+
+    &.rightleg{
+        img{
+            float: right;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+
+#boxcentered{
+    background-color: pink;
+    display: block;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    span{
+        display: block;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+
+.item{
+    &.header, &.rightletters, &.alphabet, &.wrongletters{
+        text-align: center;
+        font-variant: small-caps;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    &.header{
+        font-size: 3rem;
+    }
+
+    &.alphabet{
+        span{
+            color: white;
+            background-color: #00aafd;
+            display: block;
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+            }
+        }
+
+    &.rightletters{
+        span{
+            display: block;
+            padding: 20px;
+            }
+        }
+    
+
+}
