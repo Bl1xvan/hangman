@@ -22,7 +22,7 @@
   font-size: 3rem;
 }
 
-.item.alphabet span {
+.item.alphabet details {
   color: white;
   background-color: #00aafd;
   display: block;
@@ -39,6 +39,10 @@
 .minitem.head img {
   display: block;
   margin: auto;
+}
+
+.minitem.chest {
+  border: 1px solid black;
 }
 
 .minitem.chest img {
@@ -80,6 +84,16 @@ body {
 img {
   width: 100%;
   height: auto;
+}
+
+#right-box span {
+  float: left;
+  margin: 3px;
+  border-bottom: 2px solid black;
+}
+
+#right-box .fruit-letter {
+  visibility: hidden;
 }
 
 @media screen and (min-width: 800px) {

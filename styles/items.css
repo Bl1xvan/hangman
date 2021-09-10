@@ -22,7 +22,7 @@
   font-size: 3rem;
 }
 
-.item.alphabet span {
+.item.alphabet details {
   color: white;
   background-color: #00aafd;
   display: block;

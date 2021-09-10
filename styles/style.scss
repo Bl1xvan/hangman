@@ -26,6 +26,18 @@ img{
     height: auto;
 }
 
+#right-box{
+    span{
+        float: left;
+        margin: 3px;
+        border-bottom: 2px solid black;
+    }
+
+    .fruit-letter{
+        visibility: hidden;
+    }
+}
+
 @media screen and (min-width: 800px){
 
     #hangman-container{
