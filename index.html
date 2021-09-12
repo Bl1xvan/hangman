@@ -12,23 +12,21 @@
 <!--I want a container for the hangman, a container for the blank words, another container for the wrong letters-->  
     <div id="main-container">
         <div id="hangman-container">
-            <div class="item header">HANGMAN!</div>
+            <div class="item header">HANGMAN</div>
             <div class="item wrongletters">
-                <span id="boxcentered">
-                    <h4>Wrong Letters</h4>
-                    <span id="wrong-box"></span>
-                </span>
+                <div class="boxcentered header"><h4>Wrong Letters</h4></div>
+                <div class="boxcentered content"><span id="wrong-box"></span></div>
             </div>
             <div class="createspace">
                     <div class="minitem"></div>
-                    <div class="minitem head"><img src="./images/head.png" alt="head"></div>
+                    <div class="minitem head" data-hangman><img src="./images/head.png" alt="head"></div>
                     <div class="minitem"></div>
-                    <div class="minitem rightarm"><img src="./images/rightarm.png" alt="r-arm"></div>
-                    <div class="minitem chest"><img src="./images/heartface.png" alt="heart"></div>
-                    <div class="minitem leftarm"><img src="./images/leftarm.png" alt="l-arm"></div>
-                    <div class="minitem rightleg"><img src="./images/rightleg.png" alt="r-leg"></div>
+                    <div class="minitem rightarm" data-hangman><img src="./images/rightarm.png" alt="r-arm"></div>
+                    <div class="minitem chest" data-hangman><img src="./images/heartface.png" alt="heart"></div>
+                    <div class="minitem leftarm" data-hangman><img src="./images/leftarm.png" alt="l-arm"></div>
+                    <div class="minitem rightleg" data-hangman><img src="./images/rightleg.png" alt="r-leg"></div>
                     <div class="minitem"></div>
-                    <div class="minitem lefttleg"><img src="./images/leftleg.png" alt="l-leg"></div>
+                    <div class="minitem lefttleg" data-hangman><img src="./images/leftleg.png" alt="l-leg"></div>
             </div>
             <div class="item rightletters">
                 <span id="right-box"></span>
@@ -36,8 +34,7 @@
             <div class="item alphabet">
                 <details>
                     <summary>click to view letters</summary>
-                    <span id="letter-buttons">
-                        
+                    <span id="letter-buttons"> 
                     </span>
                 </details>
             </div>

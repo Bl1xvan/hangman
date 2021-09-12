@@ -1,17 +1,4 @@
-
-#boxcentered{
-    background-color: pink;
-    display: block;
-    width: 80%;
-    margin: auto;
-    border-radius: 10px;
-    span{
-        display: block;
-        width: 90%;
-        text-align: center;
-    }
-}
-
+@import "variables";
 
 .item{
     &.header, &.rightletters, &.alphabet, &.wrongletters{
@@ -22,6 +9,7 @@
 
     &.header{
         font-size: 3rem;
+        padding-bottom: 20px;
     }
 
     &.alphabet{
@@ -38,9 +26,23 @@
     &.rightletters{
         span{
             display: block;
-            padding: 20px;
             }
         }
-    
+
+    &.wrongletters{
+        background-color: $pinkIsh;
+        color: white;
+        font-size: 1.5rem;
+        .boxcentered{
+            &.header{
+                h4{
+                    border-bottom: 1px solid white;
+                    padding-bottom: 15px;
+                    width: 80%;
+                    margin: auto;
+                }
+            }
+        }
+    }
 
 }

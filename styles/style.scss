@@ -1,5 +1,6 @@
 @import "items";
 @import "minitems";
+@import "variables";
 
 *, *::before, *::after{
     box-sizing: border-box;
@@ -11,6 +12,7 @@ body{
 
 #main-container{
     width: 70%;
+    padding-top: 5vh;
     margin: auto;
 }
 
@@ -27,8 +29,10 @@ img{
 }
 
 #right-box{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
     span{
-        float: left;
         margin: 3px;
         border-bottom: 2px solid black;
     }
@@ -36,6 +40,34 @@ img{
     .fruit-letter{
         visibility: hidden;
     }
+}
+
+#wrong-box{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+
+    p{
+        margin: 10px;
+    }
+}
+
+.letter{
+    background-color: #175d69;
+    color: white;
+    padding: 3px;
+    margin: 3px;
+    border: none;
+    font-size: 1em;
+    width: 35px;
+
+    &:hover{
+        background-color: #17bfc5;
+    }
+}
+
+[data-hangman]{
+    visibility: hidden;
 }
 
 @media screen and (min-width: 800px){
@@ -54,6 +86,8 @@ img{
                 grid-row: 1/ span 2;
                 margin-top: 20px;
                 padding: 20px;
+                display: grid;
+                grid-template-rows: 1fr 4fr;
         
             }
         
@@ -61,11 +95,13 @@ img{
                 grid-column: 1/ span 2;
                 font-size: 2rem;
             }
-        }
-    }
 
-    #boxcentered{
-        height: 90%;
+            &.rightletters{
+                span{
+                    padding: 20px;
+                }
+            }
+        }
     }
 
 }
@@ -84,7 +120,13 @@ img{
 
     .item{
         &.rightletters, &.alphabet{
-            font-size: 1.5rem;
+            font-size: 1em;
+        }
+
+        &.rightletters{
+            span{
+                padding: 10px;
+            }
         }
 
         &.wrongletters{
