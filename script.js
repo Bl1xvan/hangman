@@ -12,6 +12,9 @@ function shuffleNumber(){
     return Math.floor(Math.random() * 5);
 }
 
+/////New edit
+
+
 function randomWord(){
     const randomFruit = shuffleNumber();
    return fruits[randomFruit];
