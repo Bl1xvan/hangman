@@ -11,6 +11,7 @@ let text = "";
 function shuffleNumber(){
     return Math.floor(Math.random() * 5);
 }
+
 function randomWord(){
     const randomFruit = shuffleNumber();
    return fruits[randomFruit];
@@ -26,7 +27,6 @@ let buttons = "";
 for(let l in letterArray){
     buttons+=`<button class="letter" onclick="checkLetter(this.innerHTML)">`+letterArray[l]+`</button>`;
 }
-
 buttonbox.innerHTML = buttons;
 
 const wrongLetters = [];

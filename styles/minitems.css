@@ -5,11 +5,19 @@
 
 .minitem.chest {
   border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .minitem.chest img {
   display: block;
   margin: auto;
+  width: 50%;
+  height: auto;
 }
 
 .minitem.rightarm img {
