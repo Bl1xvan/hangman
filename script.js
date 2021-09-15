@@ -18,6 +18,8 @@ function startGame(){
     startScreen.style.visibility = "hidden";
 }
 
+//this is a new branch
+
 function randomWord(){
     const shuffleNumber = Math.floor(Math.random() * 5);
     return fruits[shuffleNumber];
