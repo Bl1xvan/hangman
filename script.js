@@ -4,38 +4,35 @@ const buttonbox = document.getElementById("letter-buttons");
 const fruits = ["banana", "apple", "grapes", "watermelon", "grapefruit"]
 const letterArray = Array.from("abcdefghijklmnopqrstuvwxyz"); 
 const hangmanArray = Array.from(document.querySelectorAll('[data-hangman]'));
+const startButton = document.getElementById("startbutton");
+const letters = letterArray.map((letter) => `<button class="letter">`+letter+`</button>`);
+buttonbox.innerHTML = letters.join(" ");
+const startScreen = document.getElementById("startscreen");
+const letterQuery = Array.from(document.querySelectorAll(".letter"));
+startButton.addEventListener("click", startGame);
 
-
-let text = "";
-
-function shuffleNumber(){
-    return Math.floor(Math.random() * 5);
+function startGame(){
+    randomWord();
+    document.body.addEventListener("keyup", checkKey);
+    letterQuery.map((letterFunction) => letterFunction.setAttribute("onclick", "checkLetter(this.innerHTML)"));
+    startScreen.style.visibility = "hidden";
 }
 
-/////New edit
-
-
 function randomWord(){
-    const randomFruit = shuffleNumber();
-   return fruits[randomFruit];
+    const shuffleNumber = Math.floor(Math.random() * 5);
+    return fruits[shuffleNumber];
 }
 
 const newFruit = randomWord();
+
+let text = "";
 for(let n in newFruit){
     text+= `<span><p class="fruit-letter">`+newFruit[n]+`</p></span>`;
 }
 rightbox.innerHTML = text;
 
-let buttons = "";
-for(let l in letterArray){
-    buttons+=`<button class="letter" onclick="checkLetter(this.innerHTML)">`+letterArray[l]+`</button>`;
-}
-buttonbox.innerHTML = buttons;
-
 const wrongLetters = [];
 const storeLetter = [];
-
-document.body.addEventListener("keyup", checkKey);
 
 function checkKey(event){
     const ltr = event.key;
@@ -63,7 +60,7 @@ function checkLetter(ltrchk){
         wrongLetters.push("<p>"+ltrchk+"</p>");
         hangmanArray[addLose].style.visibility="visible";
         if(loseScore == 6){
-            alert("Try again");
+            endGame("TRY AGAIN");
         }    
     }   
     wrongbox.innerHTML= wrongLetters.join(" ");
@@ -79,9 +76,15 @@ function loopLetter(ltrlp){
             fruitHTML[f].style.visibility="visible";
             winScore++;
             if(winScore == fruitHTML.length){
-                alert("Congratulations!");
+                endGame("WINNER!");
             }
         }
     }
 }
 
+function endGame(message){
+    startScreen.style.visibility = "visible";
+    document.getElementById("startmessage").innerText = message;
+    document.body.removeEventListener("keyup", checkKey);
+    letterQuery.map((letterFunction) => letterFunction.removeAttribute("onclick", "checkLetter(this.innerHTML)"));
+}
