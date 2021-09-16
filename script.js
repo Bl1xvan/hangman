@@ -12,27 +12,26 @@ const letterQuery = Array.from(document.querySelectorAll(".letter"));
 startButton.addEventListener("click", startGame);
 
 function startGame(){
-    randomWord();
     document.body.addEventListener("keyup", checkKey);
     letterQuery.map((letterFunction) => letterFunction.setAttribute("onclick", "checkLetter(this.innerHTML)"));
     startScreen.style.visibility = "hidden";
+    loseScore = 0;
+    winScore = 0;
+    wrongLetters = [];
+    storeLetter = [];
+    randomWord();
 }
 
 function randomWord(){
     const shuffleNumber = Math.floor(Math.random() * 5);
-    return fruits[shuffleNumber];
+    const newFruit = fruits[shuffleNumber];
+    const newArray = Array.from(newFruit);
+    const newHTML = newArray.map((fruit) => `<span><p class="fruit-letter">`+fruit+`</p></span>`);
+    rightbox.innerHTML = newHTML.join(" ");
 }
 
-const newFruit = randomWord();
-
-let text = "";
-for(let n in newFruit){
-    text+= `<span><p class="fruit-letter">`+newFruit[n]+`</p></span>`;
-}
-rightbox.innerHTML = text;
-
-const wrongLetters = [];
-const storeLetter = [];
+let wrongLetters = [];
+let storeLetter = [];
 
 function checkKey(event){
     const ltr = event.key;
@@ -47,7 +46,10 @@ function checkKey(event){
 let loseScore = 0;
 
 function checkLetter(ltrchk){
-    const fruit = newFruit;
+
+    const fruitQuery = Array.from(document.querySelectorAll(".fruit-letter"));
+    const fruitMap = fruitQuery.map((fq) => fq.innerHTML)
+    const fruit = fruitMap.toString();
     if(storeLetter.includes(ltrchk)){
         alert("you typed "+ltrchk+" already");
         return false;
