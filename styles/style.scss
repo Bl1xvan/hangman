@@ -73,7 +73,7 @@ img{
 
 
 #startscreen{
-    background-color: rgba(255, 0, 0, 0.349);
+    background-color: rgba(0, 255, 221, 0.349);
     z-index: 2;
     position: relative;
 }
@@ -92,17 +92,21 @@ img{
 }
 
 #startbutton{
-    background-color: #17bfc5;
+    background-color: #ff6ebe;
     color: white;
     border: none;
     padding: 10px;
     &:hover{
-        background-color: aqua;
+        background-color: rgb(202, 98, 243);
         color: black;
     }
 }
 
 @media screen and (min-width: 800px){
+
+    small{
+        font-size: small;
+    }
 
     #startmessage, #startbutton{
         font-size: 2em;
@@ -115,6 +119,10 @@ img{
         .item{
             &.header{
                 grid-column: 1/ span 1;
+
+                small{
+                    color:rgb(255, 0, 170);
+                }
             }
         
             &.wrongletters{
@@ -143,6 +151,7 @@ img{
 }
 
 @media screen and (max-width: 800px){
+
     #startmessage, #startbutton{
         font-size: 1.5em;
     }

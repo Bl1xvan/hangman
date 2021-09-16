@@ -26,6 +26,7 @@
   background-color: #ff8cf5;
   color: white;
   font-size: 1.5rem;
+  border-radius: 5px;
 }
 
 .item.wrongletters .boxcentered.header h4 {

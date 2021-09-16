@@ -26,6 +26,7 @@
   background-color: #ff8cf5;
   color: white;
   font-size: 1.5rem;
+  border-radius: 5px;
 }
 
 .item.wrongletters .boxcentered.header h4 {
@@ -148,7 +149,7 @@ img {
 }
 
 #startscreen {
-  background-color: rgba(255, 0, 0, 0.349);
+  background-color: rgba(0, 255, 221, 0.349);
   z-index: 2;
   position: relative;
 }
@@ -177,18 +178,21 @@ img {
 }
 
 #startbutton {
-  background-color: #17bfc5;
+  background-color: #ff6ebe;
   color: white;
   border: none;
   padding: 10px;
 }
 
 #startbutton:hover {
-  background-color: aqua;
+  background-color: #ca62f3;
   color: black;
 }
 
 @media screen and (min-width: 800px) {
+  small {
+    font-size: small;
+  }
   #startmessage, #startbutton {
     font-size: 2em;
   }
@@ -202,6 +206,9 @@ img {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/ span 1;
+  }
+  #hangman-container .item.header small {
+    color: #ff00aa;
   }
   #hangman-container .item.wrongletters {
     -ms-grid-column: 2;
