@@ -5,10 +5,12 @@ const fruits = ["banana", "apple", "grapes", "watermelon", "grapefruit"]
 const letterArray = Array.from("abcdefghijklmnopqrstuvwxyz"); 
 const hangmanArray = Array.from(document.querySelectorAll('[data-hangman]'));
 const startButton = document.getElementById("startbutton");
-const letters = letterArray.map((letter) => `<button class="letter">`+letter+`</button>`);
-buttonbox.innerHTML = letters.join(" ");
 const startScreen = document.getElementById("startscreen");
 const letterQuery = Array.from(document.querySelectorAll(".letter"));
+
+const letters = letterArray.map((letter) => `<button class="letter">`+letter+`</button>`);
+buttonbox.innerHTML = letters.join(" ");
+
 startButton.addEventListener("click", startGame);
 
 function startGame(){
@@ -17,8 +19,12 @@ function startGame(){
     startScreen.style.visibility = "hidden";
     loseScore = 0;
     winScore = 0;
-    wrongLetters = [];
-    storeLetter = [];
+    wrongLetters.splice(0);
+    storeLetter.splice(0);
+    wrongbox.innerHTML = "";
+    for(let hide in hangmanArray){
+    hangmanArray[hide].style.visibility="hidden";
+    }
     randomWord();
 }
 
@@ -30,8 +36,9 @@ function randomWord(){
     rightbox.innerHTML = newHTML.join(" ");
 }
 
-let wrongLetters = [];
+
 let storeLetter = [];
+let wrongLetters = [];
 
 function checkKey(event){
     const ltr = event.key;
@@ -44,9 +51,8 @@ function checkKey(event){
 }
 
 let loseScore = 0;
-
 function checkLetter(ltrchk){
-
+    
     const fruitQuery = Array.from(document.querySelectorAll(".fruit-letter"));
     const fruitMap = fruitQuery.map((fq) => fq.innerHTML)
     const fruit = fruitMap.toString();
