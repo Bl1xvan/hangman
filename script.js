@@ -6,8 +6,6 @@ const letterArray = Array.from("abcdefghijklmnopqrstuvwxyz");
 const hangmanArray = Array.from(document.querySelectorAll('[data-hangman]'));
 const startButton = document.getElementById("startbutton");
 const startScreen = document.getElementById("startscreen");
-
-
 const letters = letterArray.map((letter) => `<button class="letter">`+letter+`</button>`);
 buttonbox.innerHTML = letters.join(" ");
 const letterQuery = Array.from(document.querySelectorAll(".letter"));

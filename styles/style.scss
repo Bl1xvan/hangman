@@ -102,11 +102,15 @@ img{
     }
 }
 
-@media screen and (min-width: 800px){
+#startmessage{
+    text-align: center;
+}
 
-    small{
-        font-size: small;
-    }
+small{
+    font-size: small;
+}
+
+@media screen and (min-width: 800px){
 
     #startmessage, #startbutton{
         font-size: 2em;
@@ -119,10 +123,6 @@ img{
         .item{
             &.header{
                 grid-column: 1/ span 1;
-
-                small{
-                    color:rgb(255, 0, 170);
-                }
             }
         
             &.wrongletters{

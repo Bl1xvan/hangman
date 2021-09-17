@@ -189,10 +189,15 @@ img {
   color: black;
 }
 
+#startmessage {
+  text-align: center;
+}
+
+small {
+  font-size: small;
+}
+
 @media screen and (min-width: 800px) {
-  small {
-    font-size: small;
-  }
   #startmessage, #startbutton {
     font-size: 2em;
   }
@@ -206,9 +211,6 @@ img {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/ span 1;
-  }
-  #hangman-container .item.header small {
-    color: #ff00aa;
   }
   #hangman-container .item.wrongletters {
     -ms-grid-column: 2;
