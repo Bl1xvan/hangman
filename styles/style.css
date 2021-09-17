@@ -11,7 +11,7 @@
 
 .item.alphabet details {
   color: white;
-  background-color: #00aafd;
+  background-color: #66B032;
   display: block;
   width: 90%;
   margin: auto;
@@ -23,7 +23,7 @@
 }
 
 .item.wrongletters {
-  background-color: #ff8cf5;
+  background-color: #341809;
   color: white;
   font-size: 1.5rem;
   border-radius: 5px;
@@ -149,7 +149,7 @@ img {
 }
 
 #startscreen {
-  background-color: rgba(0, 255, 221, 0.349);
+  background-color: #EFD4F7;
   z-index: 2;
   position: relative;
 }
@@ -178,7 +178,7 @@ img {
 }
 
 #startbutton {
-  background-color: #ff6ebe;
+  background-color: #FE2712;
   color: white;
   border: none;
   padding: 10px;
