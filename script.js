@@ -6,16 +6,20 @@ const letterArray = Array.from("abcdefghijklmnopqrstuvwxyz");
 const hangmanArray = Array.from(document.querySelectorAll('[data-hangman]'));
 const startButton = document.getElementById("startbutton");
 const startScreen = document.getElementById("startscreen");
-const letterQuery = Array.from(document.querySelectorAll(".letter"));
+
 
 const letters = letterArray.map((letter) => `<button class="letter">`+letter+`</button>`);
 buttonbox.innerHTML = letters.join(" ");
+const letterQuery = Array.from(document.querySelectorAll(".letter"));
+
 
 startButton.addEventListener("click", startGame);
 
 function startGame(){
     document.body.addEventListener("keyup", checkKey);
-    letterQuery.map((letterFunction) => letterFunction.setAttribute("onclick", "checkLetter(this.innerHTML)"));
+    for(let btn in letterQuery){
+        letterQuery[btn].setAttribute("onclick", "checkLetter(this.innerHTML)");
+    }
     startScreen.style.visibility = "hidden";
     loseScore = 0;
     winScore = 0;
